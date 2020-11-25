@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <title>{{title}}</title>
+    <meta name="description" content="{{description}}" />
+    <meta name="keywords" content="" />
+    <meta name="author" content="Diego Leon" />
+    <link rel="shortcut icon" href="ftco-32x32.png">
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700,%20900|Vollkorn:400i" />
+    <link rel="stylesheet" href="/fonts/icomoon/style.css">
+    <link rel="stylesheet" href="/Content/bootstrap.min.css" />
+    <link rel="stylesheet" href="/Content/jquery-ui.css" />
+    <link rel="stylesheet" href="/Content/owl.carousel.min.css" />
+    <link rel="stylesheet" href="/Content/owl.theme.default.min.css" />
+    <link rel="stylesheet" href="/Content/owl.theme.default.min.css" />
+    <link rel="stylesheet" href="/Content/jquery.fancybox.min.css" />
+    <link rel="stylesheet" href="/Content/bootstrap-datepicker.css" />
+    <link rel="stylesheet" href="/fonts/flaticon/font/flaticon.css" />
+    <link rel="stylesheet" href="/Content/aos.css" />
+    <link rel="stylesheet" href="/Content/style.css" />
+</head>
+
+<body data-spy="scroll" data-target=".site-navbar-target" data-offset="300" id="home-section">
+    <div id="overlayer"></div>
+    {{!-- <div class="loader">
+        <div class="spinner-border text-primary" role="status">
+            <span class="sr-only">Cargando...</span>
+        </div>
+    </div> --}}
+    <div class="site-wrap">
+        {{>header}}
+        {{#if MuestraInicio}}
+        <section class="site-blocks-cover overflow-hidden bg-light">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-7 align-self-center text-center text-md-left">
+                        <div class="intro-text">
+                            <h1>Bienvenido a GuToys</h1>
+                            <p class="mb-4">Contamos con artículos tipo lego armables con excelentes acabados de las
+                                películas de Marvel, DC y Caballeros del Zodiaco y más.</p>
+                            <br />
+                            <a href="https://api.whatsapp.com/send?phone=+57 3123427138"><img class="gutoysIco"
+                                    src="img/WA.png" /> 312 342 7138</a>
+                            <br />
+                            <a href="https://www.facebook.com/GuToyss/" target="_blank"><img class="gutoysIco"
+                                    src="img/FB.ico" /> Gutoyss</a>
+                            <br />
+                            <a href="https://www.instagram.com/gutoyss/" target="_blank"><img class="gutoysIco"
+                                    src="img/IG.png" /> Gutoyss</a>
+                            <br />
+                            <a href="mailto: GutoysDG@gmail.com"><img class="gutoysIco" src="img/GM.png" />
+                                GutoysDG@gmail.com</a>
+                        </div>
+                    </div>
+                    <div class="col-md-5 align-self-end text-center text-md-right">
+                        <img src="img/inicio.jpg" alt="Gutoys" class="img-fluid cover-img">
+                    </div>
+                </div>
+            </div>
+        </section>
+        {{else}}
+        <br><br>
+        {{/if}}
+
+        {{#each lstCategoria}}
+        {{#each this.lstSubCategoria}}
+        <section class="site-section" id="{{subCategoriaId}}-section">
+            <div class="container">
+                <div class="row justify-content-center" data-aos="fade-up">
+                    <div class="col-lg-6 text-center heading-section mb-5">
+                        <h2 class="text-black mb-2">
+                            {{categoriaNombre}} - {{subCategoriaNombre}}
+                        </h2>
+                    </div>
+                </div>
+                <div class="row">
+                    {{#each lstProducto}}
+                    <div class="col-md-6 mb-4" data-aos="fade-up" data-aos-delay="">
+                        <div class="d-lg-flex blog-entry">
+                            <figure class="mr-4">
+                                <a class="gal-item d-block" href="{{productoImagen}}" data-fancybox="gal">
+                                    <img src="{{productoImagen}}" alt="{{productoNombre}}" class="img-fluid img-Prd">
+                                </a>
+                            </figure>
+                            <div class="blog-entry-text">
+                                <p>
+                                    <strong>{{productoNombre}}</strong>
+                                    {{productoDescripcion}}<br />
+                                    Disponible: {{productoCantidad}}
+                                    <span class="post-meta mb-3 d-block"></span>
+                                    <a class="btn btn-lg btn-block btn-outline-primary">
+                                        <span class="icon-shopping-cart">
+                                        </span>
+                                        {{FormatoNumero productoValorVenta}}
+                                    </a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    {{/each}}
+                </div>
+            </div>
+        </section>
+        {{/each}}
+        {{/each}}
+        <section class="" id="contact-section">
+            <div class="container">
+                <div class="row no-gutters">
+                    <div class="col-lg-12 bg-secondary">
+                        <div class="row justify-content-center align-items-center h-100">
+                            <div class="col-lg-6 text-center heading-section mb-5 align-self-center">
+                                <h2 class="text-white mb-5">Contáctanos</h2>
+                                <ul class="list-unstyled text-left address">
+                                    <li>
+                                        <span class="d-block">Enviamos a:</span>
+                                        <p>Bogotá, Chía, Cajicá y Zipaquirá</p>
+                                    </li>
+                                    <li>
+                                        <a href="https://api.whatsapp.com/send?phone=+57 3123427138"><img
+                                                class="gutoysIco" src="img/WA.png" /> 312 342 7138</a>
+                                    </li>
+                                    <li>
+                                        <a href="https://www.facebook.com/GuToyss/" target="_blank"><img
+                                                class="gutoysIco" src="img/FB.ico" /> Gutoyss</a>
+                                    </li>
+                                    <li>
+                                        <a href="https://www.instagram.com/gutoyss/" target="_blank"><img
+                                                class="gutoysIco" src="img/IG.png" /> Gutoyss</a>
+                                    </li>
+                                    <li>
+                                        <a href="mailto: GutoysDG@gmail.com"><img class="gutoysIco" src="img/GM.png" />
+                                            GutoysDG@gmail.com</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        {{>footer}}
+    </div>
+    <div id="dvResultado" style="display:none">
+        <div class="col-xs-12">
+            Contáctanos en las redes sociales e indicanos que te interesa
+            <br />
+            <br />
+            <a href="https://api.whatsapp.com/send?phone=+57 3123427138"><img class="gutoysIco" src="img/WA.png" /> 312
+                342 7138</a>
+            <br />
+            <a href="https://www.facebook.com/GuToyss/" target="_blank"><img class="gutoysIco" src="img/FB.ico" />
+                Gutoyss</a>
+            <br />
+            <a href="https://www.instagram.com/gutoyss/" target="_blank"><img class="gutoysIco" src="img/IG.png" />
+                Gutoyss</a>
+            <br />
+            <a href="mailto: GutoysDG@gmail.com"><img class="gutoysIco" src="img/GM.png" />
+                GutoysDG@gmail.com</a>
+        </div>
+    </div>
+
+
+    <script src="Scripts/jquery-3.3.1.min.js"></script>
+    <script src="Scripts/jquery-ui.js"></script>
+    <script src="Scripts/popper.min.js"></script>
+    <script src="Scripts/bootstrap.min.js"></script>
+    <script src="Scripts/owl.carousel.min.js"></script>
+    <script src="Scripts/jquery.countdown.min.js"></script>
+    <script src="Scripts/jquery.easing.1.3.js"></script>
+    <script src="Scripts/aos.js"></script>
+    <script src="Scripts/jquery.fancybox.min.js"></script>
+    <script src="Scripts/jquery.sticky.js"></script>
+    <script src="Scripts/isotope.pkgd.min.js"></script>
+    <script src="Scripts/main.js"></script>
+    <script src="Scripts/FactIn.js"></script>
+    <script src="Scripts/Index.js">  </script>
+</body>
+
+</html>
