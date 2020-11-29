@@ -1,7 +1,8 @@
 const mongoose = require('mongoose')
-
-mongoose.connect('mongodb://127.0.0.1:27017/FactInLocal', {
+const uri = "mongodb+srv://FactInAdmin:MongoseeQuinto5@factin.t8zyd.mongodb.net/FactInGutoys?retryWrites=true&w=majority";
+mongoose.connect(uri, {
     useNewUrlParser: true,
     useCreateIndex: true,
     useFindAndModify: true
-})
+}).
+catch(error =>console.log(error));

@@ -3,7 +3,6 @@ const path = require('path');
 const hbs = require('hbs');
 const productoService = require('../views/page/producto/producto');
 const port = process.env.PORT || 1987
-
 const app = express();
 //Define paths for express config
 const directoryWeb = path.join(__dirname, '../');
