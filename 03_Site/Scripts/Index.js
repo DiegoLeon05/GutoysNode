@@ -1,7 +1,7 @@
 ﻿//#region Variables
 var Generico = new Globales(),
     txtSearch = $("#txtSearch"),
-    dvResultado = $("#dvResultado"),
+    dvResultado = $("#contact-section"),
     txtbusqueda = Generico.ParametroUrl("search"),
     Globales = null;
 //#endregion
@@ -33,7 +33,7 @@ $.each($(".btn-outline-primary"), function (btn, boton) {
             BotonCerrar: {
                 texto: "Cerrar",
                 click: function () {
-                    dvResultado.appendTo("body");
+                    dvResultado.appendTo("#dvTodo");
                     Generico.ControlVisible(dvResultado, false);
                     Generico.CierraModales();
                 }
@@ -42,3 +42,4 @@ $.each($(".btn-outline-primary"), function (btn, boton) {
         Generico.ControlVisible(dvResultado, true);
     });
 });
+

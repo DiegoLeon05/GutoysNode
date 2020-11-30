@@ -5,14 +5,15 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-    <meta http-equiv="Content-Security-Policy" content="default-src 'none'; connect-src 'self';font-src 'self'; img-src 'self' data: https:; style-src 'self' ; script-src 'self'">
+    <meta http-equiv="Content-Security-Policy"
+        content="default-src 'none'; connect-src 'self';font-src 'self'; img-src 'self' data: https:; style-src 'self' ; script-src 'self'">
     <title>{{title}}</title>
     <meta name="description" content="{{description}}" />
     <meta name="keywords" content="" />
     <meta name="author" content="Diego Leon" />
     <link rel="shortcut icon" href="ftco-32x32.png">
 
-    {{!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700,%20900|Vollkorn:400i" /> --}}
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700,%20900|Vollkorn:400i" />
     <link rel="stylesheet" href="/fonts/icomoon/style.css">
     <link rel="stylesheet" href="/Content/bootstrap.min.css" />
     <link rel="stylesheet" href="/Content/jquery-ui.css" />
@@ -33,7 +34,7 @@
             <span class="sr-only">Cargando...</span>
         </div>
     </div> --}}
-    <div class="site-wrap">
+    <div class="site-wrap" id="dvTodo">
         {{>header}}
         {{#if MuestraInicio}}
         <section class="site-blocks-cover overflow-hidden bg-light">
@@ -144,28 +145,8 @@
                 </div>
             </div>
         </section>
-        {{>footer}}
     </div>
-    <div id="dvResultado" style="display:none">
-        <div class="col-xs-12">
-            Contáctanos en las redes sociales e indicanos que te interesa
-            <br />
-            <br />
-            <a href="https://api.whatsapp.com/send?phone=+57 3123427138"><img class="gutoysIco" src="img/WA.png" /> 312
-                342 7138</a>
-            <br />
-            <a href="https://www.facebook.com/GuToyss/" target="_blank"><img class="gutoysIco" src="img/FB.ico" />
-                Gutoyss</a>
-            <br />
-            <a href="https://www.instagram.com/gutoyss/" target="_blank"><img class="gutoysIco" src="img/IG.png" />
-                Gutoyss</a>
-            <br />
-            <a href="mailto: GutoysDG@gmail.com"><img class="gutoysIco" src="img/GM.png" />
-                GutoysDG@gmail.com</a>
-        </div>
-    </div>
-
-
+    {{>footer}}
     <script src="Scripts/jquery-3.3.1.min.js"></script>
     <script src="Scripts/jquery-ui.js"></script>
     <script src="Scripts/popper.min.js"></script>
