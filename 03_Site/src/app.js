@@ -30,7 +30,7 @@ app.use(categoriaRouter)
 app.use(subcategoriaRouter)
 
 //Setup pages/views
-app.get('', (req, res) => {
+app.get('/', (req, res) => {
     productoService.Productos(req.query.search, (error, lstCategoria) => {
         res.render('/producto/producto', {
             title: '',
