@@ -32,7 +32,7 @@ app.use(subcategoriaRouter)
 //Setup pages/views
 app.get('', (req, res) => {
     productoService.Productos(req.query.search, (error, lstCategoria) => {
-        res.render('producto/producto', {
+        res.render('/producto/producto', {
             title: '',
             description: 'This is the principal page of my site',
             lstCategoria: lstCategoria,
