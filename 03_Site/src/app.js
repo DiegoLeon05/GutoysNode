@@ -16,6 +16,9 @@ const productoRouter = require('../../02_Service/producto/producto')
 const categoriaRouter = require('../../02_Service/producto/categoria')
 const subcategoriaRouter = require('../../02_Service/producto/subcategoria')
 
+app.use(productoRouter)
+app.use(categoriaRouter)
+app.use(subcategoriaRouter)
 
 hbs.registerPartials(partialsPath);
 //Setup handlebars engine and views location
@@ -24,15 +27,13 @@ app.set('views', viewsPath);
 //Setup static directory to serve
 app.use(express.static(directoryWeb));
 
+
 app.use(express.json())
-app.use(productoRouter)
-app.use(categoriaRouter)
-app.use(subcategoriaRouter)
 
 //Setup pages/views
-app.get('/', (req, res) => {
+app.get('', (req, res) => {
     productoService.Productos(req.query.search, (error, lstCategoria) => {
-        res.render('/producto/producto', {
+        res.render('producto/producto', {
             title: '',
             description: 'This is the principal page of my site',
             lstCategoria: lstCategoria,

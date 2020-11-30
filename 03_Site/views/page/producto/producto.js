@@ -1,50 +1,53 @@
 const request = require('request')
-
+const urlService = 'https://gutoys.herokuapp.com/';
 const CategoriaGet = (callback) => {
-    const url = '/categoria'
+    const url = urlService + 'categoria';
     request({ url, json: true }, (error, { body }) => {
         if (error) {
             callback('Unable to connect to weather service!', undefined)
-        } else if (body.error) {
+        } else if (body != undefined && body.error) {
             callback('Unable to find location', undefined)
         } else {
-            callback(undefined, body)
+            if (body != undefined)
+                callback(undefined, body)
         }
     })
 }
 
 const SubCategoriaGet = (callback) => {
-    const url = '/subcategoria'
+    const url = urlService + 'subcategoria';
     request({ url, json: true }, (error, { body }) => {
         if (error) {
             callback('Unable to connect to weather service!', undefined)
-        } else if (body.error) {
+        } else if (body != undefined && body.error) {
             callback('Unable to find location', undefined)
         } else {
-            callback(undefined, body.filter(x => x.subCategoriaActivo == true))
+            if (body != undefined)
+                callback(undefined, body.filter(x => x.subCategoriaActivo == true))
         }
     })
 }
 
 const ProductoGet = (callback) => {
-    const url = '/producto'
+    const url = urlService + 'producto';
     request({ url, json: true }, (error, { body }) => {
         if (error) {
             callback('Unable to connect to weather service!', undefined)
-        } else if (body.error) {
+        } else if (body != undefined && body.error) {
             callback('Unable to find location', undefined)
         } else {
-            callback(undefined, body.filter(x => x.productoMostrarWeb == true))
+            if (body != undefined)
+                callback(undefined, body.filter(x => x.productoMostrarWeb == true))
         }
     })
 }
 
 const ProductoFiltroGet = (productoNombre, callback) => {
-    const url = '/producto/?productoNombre=' + productoNombre
+    const url = urlService + 'producto/?productoNombre=' + productoNombre;
     request({ url, json: true }, (error, { body }) => {
         if (error) {
             callback('Unable to connect to weather service!', undefined)
-        } else if (body.error) {
+        } else if (body != undefined && body.error) {
             callback('Unable to find location', undefined)
         } else {
             callback(undefined, body.filter(x => x.productoMostrarWeb == true))
