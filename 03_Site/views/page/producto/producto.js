@@ -1,7 +1,7 @@
 const request = require('request')
 
 const CategoriaGet = (callback) => {
-    const url = 'http://localhost:3000/categoria'
+    const url = '/categoria'
     request({ url, json: true }, (error, { body }) => {
         if (error) {
             callback('Unable to connect to weather service!', undefined)
@@ -14,7 +14,7 @@ const CategoriaGet = (callback) => {
 }
 
 const SubCategoriaGet = (callback) => {
-    const url = 'http://localhost:3000/subcategoria'
+    const url = '/subcategoria'
     request({ url, json: true }, (error, { body }) => {
         if (error) {
             callback('Unable to connect to weather service!', undefined)
@@ -27,7 +27,7 @@ const SubCategoriaGet = (callback) => {
 }
 
 const ProductoGet = (callback) => {
-    const url = 'http://localhost:3000/producto'
+    const url = '/producto'
     request({ url, json: true }, (error, { body }) => {
         if (error) {
             callback('Unable to connect to weather service!', undefined)
@@ -40,7 +40,7 @@ const ProductoGet = (callback) => {
 }
 
 const ProductoFiltroGet = (productoNombre, callback) => {
-    const url = 'http://localhost:3000/producto/?productoNombre=' + productoNombre
+    const url = '/producto/?productoNombre=' + productoNombre
     request({ url, json: true }, (error, { body }) => {
         if (error) {
             callback('Unable to connect to weather service!', undefined)
