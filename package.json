@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "start": "node 02_Service/index.js",
-    "dev": "nodemon 02_Service/index.js"
+    "start": "node 03_Site/src/app.js -e js,hbs",
+    "dev": "nodemon 03_Site/src/app.js -e js,hbs"
   },
   "keywords": [],
   "author": "",
@@ -12,6 +12,7 @@
   "description": "",
   "dependencies": {
     "colors": "^1.4.0",
+    "concurrently": "^5.3.0",
     "express": "^4.17.1",
     "hbs": "^4.1.1",
     "mongodb": "^3.6.3",

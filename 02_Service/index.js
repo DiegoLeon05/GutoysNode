@@ -5,7 +5,6 @@ const categoriaRouter = require('../02_Service/producto/categoria')
 const subcategoriaRouter = require('../02_Service/producto/subcategoria')
 
 const app = express()
-console.log(process.env.PORT);
 const port = process.env.PORT || 3000
 
 app.use(express.json())
